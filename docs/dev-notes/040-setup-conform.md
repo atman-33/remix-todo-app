@@ -1,20 +1,32 @@
-import { getFormProps, useForm } from '@conform-to/react';
-import { parseWithZod } from '@conform-to/zod';
-import { Label } from '@radix-ui/react-label';
-import { type ActionFunctionArgs } from '@remix-run/node';
-import { Form, json, redirect, useActionData } from '@remix-run/react';
-import { AlertCircle } from 'lucide-react';
-import { useEffect } from 'react';
-import { z } from 'zod';
-import { Alert, AlertDescription, AlertTitle } from '~/components/shadcn/ui/alert';
-import { Button } from '~/components/shadcn/ui/button';
-import { Input } from '~/components/shadcn/ui/input';
-import { prisma } from '~/lib/prisma.server';
+# Conform（Formライブラリ）セットアップ
 
+## 参考URL
+
+- [RemixでFormライブラリ入れるならConformがオススメなんで使ってみてほしい](https://zenn.dev/chimame/articles/b10d7e5f5011f9)
+
+## ステップ
+
+### インストール
+
+```sh
+npm install zod @conform-to/react @conform-to/zod
+```
+
+### 利用例
+
+`app/routes/todos.new._index/route.tsx`
+
+- 1. スキーマを定義
+
+```tsx
 const schema = z.object({
   title: z.string({ required_error: 'Title is required' }),
 });
+```
 
+- 2. actionを定義
+
+```tsx
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await await request.formData();
   const submission = parseWithZod(formData, { schema });
@@ -36,23 +48,23 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     },
   });
   return redirect('/todos');
-
-  // NOTE: データを返す際は下記のように書く
-  // return json({
-  //   success: true,
-  //   message: 'success!!',
-  //   submission: submission.reply(),
-  // });
 };
+```
 
-const TodosNewPage = () => {
+- 3. アクションデータとフォーム情報を取得
+
+```tsx
   const data = useActionData<typeof action>();
   const [form, { title }] = useForm({
     onValidate({ formData }) {
       return parseWithZod(formData, { schema });
     },
   });
+```
 
+- 4. useEffectでアクションデータを処理（任意）
+
+```tsx
   useEffect(() => {
     if (!data) {
       return;
@@ -63,7 +75,11 @@ const TodosNewPage = () => {
     //   alert(data.message);
     // }
   }, [data]);
+```
 
+- 5. Formにスキーマ情報とエラー表示を設定
+
+```tsx
   return (
     <div className="flex flex-col gap-4">
       <Form method="post" className="bg-lime-2 flex items-end space-x-4" {...getFormProps(form)}>
@@ -86,6 +102,4 @@ const TodosNewPage = () => {
       )}
     </div>
   );
-};
-
-export default TodosNewPage;
+  ```

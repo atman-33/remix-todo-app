@@ -17,7 +17,7 @@ npx shadcn-ui@latest init
 ✔ Are you using a custom tailwind prefix eg. tw-? (Leave blank if not) … 
 ✔ Where is your tailwind.config.js located? … tailwind.config.js
 ✔ Configure the import alias for components: … ~/components
-✔ Configure the import alias for utils: … ~/lib/utils
+✔ Configure the import alias for utils: … ~/utils/cn
 ✔ Are you using React Server Components? … no
 ✔ Write configuration to components.json. Proceed? … yes
 ```

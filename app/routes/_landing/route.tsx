@@ -1,14 +1,14 @@
 import { Outlet } from '@remix-run/react';
 
-const RootLayout = () => {
+const LadingLayout = () => {
   return (
     <>
       <div className="border-4 p-2">
-        <div>Root Layout</div>
+        <div>Landing Layout</div>
         <Outlet />
       </div>
     </>
   );
 };
 
-export default RootLayout;
+export default LadingLayout;

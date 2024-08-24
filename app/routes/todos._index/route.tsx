@@ -1,6 +1,6 @@
 import { json, Link, useLoaderData } from '@remix-run/react';
-import { Button } from '~/components/ui/button';
-import { Separator } from '~/components/ui/separator';
+import { Button } from '~/components/shadcn/ui/button';
+import { Separator } from '~/components/shadcn/ui/separator';
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '~/components/ui/table';
+} from '~/components/shadcn/ui/table';
 import { prisma } from '~/lib/prisma.server';
 
 export const loader = async () => {

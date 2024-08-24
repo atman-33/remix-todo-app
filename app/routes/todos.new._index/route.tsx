@@ -1,8 +1,8 @@
 import { Label } from '@radix-ui/react-label';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Form, redirect } from '@remix-run/react';
-import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
+import { Button } from '~/components/shadcn/ui/button';
+import { Input } from '~/components/shadcn/ui/input';
 import { prisma } from '~/lib/prisma.server';
 
 export const action = async ({ request }: ActionFunctionArgs) => {

@@ -16,7 +16,7 @@ npx shadcn-ui@latest init
 ✔ Would you like to use CSS variables for colors? … yes
 ✔ Are you using a custom tailwind prefix eg. tw-? (Leave blank if not) … 
 ✔ Where is your tailwind.config.js located? … tailwind.config.js
-✔ Configure the import alias for components: … ~/components
+✔ Configure the import alias for components: … ~/components/shadcn
 ✔ Configure the import alias for utils: … ~/utils/cn
 ✔ Are you using React Server Components? … no
 ✔ Write configuration to components.json. Proceed? … yes
@@ -32,7 +32,7 @@ npx shadcn-ui@latest init
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   // ...
-  ignorePatterns: ['!**/.server', '!**/.client', 'app/components/ui'],
+  ignorePatterns: ['!**/.server', '!**/.client', 'app/components/shadcn/ui'],
   // ...
 ```
 

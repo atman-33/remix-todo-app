@@ -1,7 +1,7 @@
 import { MetaFunction } from '@remix-run/node';
 import { Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { Separator } from './components/ui/separator';
-import { SideBarNav } from './routes/_root/components/side-bar-nav';
+import { Separator } from './components/shadcn/ui/separator';
+import { SideBarNav } from './components/side-bar-nav/side-bar-nav';
 import './tailwind.css';
 
 export const meta: MetaFunction = () => {

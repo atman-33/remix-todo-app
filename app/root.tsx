@@ -30,7 +30,7 @@ export default function App() {
   return (
     <>
       <div
-        className="flex h-screen overflow-hidden bg-zinc-100"
+        className="flex h-screen overflow-hidden"
         style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}
       >
         <aside className="w-[250px] px-4 py-5">

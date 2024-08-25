@@ -1,4 +1,4 @@
-import { json, Link, useLoaderData } from '@remix-run/react';
+import { Form, json, Link, useLoaderData } from '@remix-run/react';
 import { Button } from '~/components/shadcn/ui/button';
 import { Separator } from '~/components/shadcn/ui/separator';
 import {
@@ -45,7 +45,9 @@ const TodosPage = () => {
                 <Link to={`${todo.id}/edit`}>
                   <Button>編集</Button>
                 </Link>
-                <Button variant="destructive">削除</Button>
+                <Form className="inline-block" action={`${todo.id}/delete`} method="post">
+                  <Button variant="destructive">削除</Button>
+                </Form>
               </TableCell>
             </TableRow>
           ))}

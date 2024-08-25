@@ -3,3 +3,10 @@ node_modules
 /.cache
 /build
 .env
+
+# log
+/logs
+
+# db
+/prisma/*.db
+/prisma/*.db-journal

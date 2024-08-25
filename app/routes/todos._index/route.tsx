@@ -42,7 +42,9 @@ const TodosPage = () => {
               <TableCell className="w-4/12">{todo.title}</TableCell>
               <TableCell className="w-4/12">{todo.done ? '完了' : '未了'}</TableCell>
               <TableCell className="w-4/12 space-x-2">
-                <Button>編集</Button>
+                <Link to={`${todo.id}/edit`}>
+                  <Button>編集</Button>
+                </Link>
                 <Button variant="destructive">削除</Button>
               </TableCell>
             </TableRow>

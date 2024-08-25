@@ -4,6 +4,9 @@ node_modules
 /build
 .env
 
+# log
+/logs
+
 # db
 /prisma/*.db
 /prisma/*.db-journal

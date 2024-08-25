@@ -9,6 +9,7 @@ import { z } from 'zod';
 import { Alert, AlertDescription, AlertTitle } from '~/components/shadcn/ui/alert';
 import { Button } from '~/components/shadcn/ui/button';
 import { Input } from '~/components/shadcn/ui/input';
+import { logger } from '~/lib/logger.server';
 import { prisma } from '~/lib/prisma.server';
 
 const schema = z.object({
@@ -16,6 +17,9 @@ const schema = z.object({
 });
 
 export const action = async ({ request }: ActionFunctionArgs) => {
+  logger.info('logger: todo creating...');
+  console.log('console: todo creating...');
+
   const formData = await await request.formData();
   const submission = parseWithZod(formData, { schema });
 
@@ -68,7 +72,7 @@ const TodosNewPage = () => {
     <div className="flex flex-col gap-4">
       <Form method="post" className="bg-lime-2 flex items-end space-x-4" {...getFormProps(form)}>
         <div>
-          <Label htmlFor="title">todo名</Label>
+          <Label htmlFor="title">タイトル</Label>
           <Input name="title" id="title" />
         </div>
         <Button type="submit">作成</Button>

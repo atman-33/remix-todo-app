@@ -84,7 +84,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     <div className="flex flex-col gap-4">
       <Form method="post" className="bg-lime-2 flex items-end space-x-4" {...getFormProps(form)}>
         <div>
-          <Label htmlFor="title">todo名</Label>
+          <Label htmlFor="title">タイトル</Label>
           <Input name="title" id="title" />
         </div>
         <Button type="submit">作成</Button>

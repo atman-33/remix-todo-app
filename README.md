@@ -57,4 +57,5 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 | パッケージ | 説明                                                               |
 | ---------- | ------------------------------------------------------------------ |
 | Prisma     | ORMライブラリ                                                      |
+| pino       | ログライブラリ                                                     |
 | Jest       | テストフレームワーク                                               |

@@ -10,3 +10,4 @@ node_modules
 # db
 /prisma/*.db
 /prisma/*.db-journal
+*storybook.log

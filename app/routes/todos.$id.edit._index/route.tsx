@@ -81,7 +81,7 @@ const TodosEditPage = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <Form method="post" className="bg-lime-2 flex items-end space-x-4" {...getFormProps(form)}>
+      <Form method="PUT" className="bg-lime-2 flex items-end space-x-4" {...getFormProps(form)}>
         <div>
           <Label htmlFor="title">タイトル</Label>
           <Input defaultValue={todo.data?.title} name="title" id="title" />

@@ -22,21 +22,21 @@ const TodosPage = () => {
   return (
     <div>
       <div className="flex items-center space-x-6">
-        <h1 className="text-2xl font-bold">Todoページ</h1>
+        <h1 className="text-2xl font-bold">Todosページ</h1>
         <Link to="new">
           <Button>新規</Button>
         </Link>
       </div>
 
       <Separator className="mb-4 mt-2 border-2 border-gray-400" />
-      <Table className="bg-yellow-100">
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHead>todo名</TableHead>
             <TableHead>進捗</TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody className="bg-yellow-100">
           {todos.map((todo) => (
             <TableRow key={todo.id}>
               <TableCell className="w-4/12">{todo.title}</TableCell>
@@ -45,7 +45,7 @@ const TodosPage = () => {
                 <Link to={`${todo.id}/edit`}>
                   <Button>編集</Button>
                 </Link>
-                <Form className="inline-block" action={`${todo.id}/delete`} method="post">
+                <Form className="inline-block" action={`${todo.id}/delete`} method="DELETE">
                   <Button variant="destructive">削除</Button>
                 </Form>
               </TableCell>

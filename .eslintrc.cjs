@@ -22,7 +22,7 @@ module.exports = {
   ignorePatterns: ['!**/.server', '!**/.client', 'app/components/shadcn/ui'],
 
   // Base config
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:storybook/recommended'],
 
   overrides: [
     // React
